@@ -1,0 +1,15 @@
+def print_formatted(number):
+    last_number_bin = bin(number).replace("0b", "")
+    last_number_binn_len = len(last_number_bin)
+    for n in range(1, number+1):
+        n_decimal_justed = str(n).rjust(last_number_binn_len)
+        n_oct = oct(n).replace("0o", "")
+        n_oct_justed = n_oct.rjust(last_number_binn_len)
+        n_hex = hex(n).replace("0x", "").upper()
+        n_hex_justed = n_hex.rjust(last_number_binn_len)
+        n_bin = bin(n).replace("0b", "")
+        n_bin_justed = n_bin.rjust(last_number_binn_len)
+        print(n_decimal_justed, end=" ")
+        print(n_oct_justed, end=" ")
+        print(n_hex_justed, end=" ")
+        print(n_bin_justed)
