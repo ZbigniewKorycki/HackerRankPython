@@ -8,7 +8,7 @@ for _ in range(int(input())):
     if "-->" in line_of_html_code:
         comment_end = line_of_html_code.split("-->")
         line_of_html_code = comment_end[1]
-    matches = re.findall('<([a-zA-Z0-9]+)>*|\s([a-zA-Z0-9/]+)="([\S]+)"', line_of_html_code)
+    matches = re.findall('<([a-zA-Z0-9]+)>*|\s([a-zA-Z0-9/]+)="([^"]+)"', line_of_html_code)
     if matches:
         for match in matches:
             if match[0]:
