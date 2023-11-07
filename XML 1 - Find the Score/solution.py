@@ -2,7 +2,10 @@ import sys
 import xml.etree.ElementTree as etree
 
 def get_attr_number(node):
-    # your code goes here
+    num_attributes = 0
+    for child in node.iter():
+        num_attributes += len(child.attrib)
+    return num_attributes
 
 if __name__ == '__main__':
     sys.stdin.readline()
